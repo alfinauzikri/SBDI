@@ -1,3 +1,43 @@
+SOAL
+-----------------------------------------------------------------------------------------------
+Berapa jumlah lelaki dan perempuan yang tinggi badannya sama atau lebih pendek dari teman anda?
+
+
+TIN          L          P
+--- ---------- ----------
+140          1          1
+143                     1
+145          1
+146                     1
+147                     1
+148                     3
+149                     3
+150                    16
+151                     2
+152                     4
+153                     5
+
+TIN          L          P
+--- ---------- ----------
+154                     4
+155          1         23
+156          2          7
+157          1          9
+158          3         12
+159          4          5
+160         15         14
+161          1          1
+162          3          1
+163          9          5
+164          8          3
+
+TIN          L          P
+--- ---------- ----------
+165         47         10
+
+23 rows selected.
+
+
 SELECT tinggi,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
