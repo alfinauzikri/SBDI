@@ -1,0 +1,8 @@
+SELECT status_sekolah.status,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
+FROM sekolah
+INNER JOIN mahasiswa ON sekolah.nim = mahasiswa.nim
+INNER JOIN status_sekolah ON sekolah.status_sekolah = status_sekolah.id_status
+WHERE sekolah.status_sekolah = (SELECT status_sekolah FROM sekolah WHERE nim = 19090003)
+GROUP BY status_sekolah.status;

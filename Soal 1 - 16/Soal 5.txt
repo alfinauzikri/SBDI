@@ -1,0 +1,8 @@
+SELECT penghasilan.penghasilan,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
+FROM penghasilan
+INNER JOIN ortu ON penghasilan.id_penghasilan = ortu.penghasilan_ayah
+INNER JOIN mahasiswa ON ortu.nim = mahasiswa.nim
+WHERE ortu.penghasilan_ayah = (SELECT penghasilan_ayah FROM ortu WHERE nim = 19090003)
+GROUP BY penghasilan.penghasilan;

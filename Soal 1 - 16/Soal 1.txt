@@ -1,0 +1,7 @@
+SELECT dosen.nama_lengkap,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
+FROM mahasiswa
+INNER JOIN dosen ON mahasiswa.dosen_wali = dosen.id_dosen
+WHERE mahasiswa.dosen_wali = (SELECT dosen_wali FROM mahasiswa WHERE nim = 19090003)
+GROUP BY dosen.nama_lengkap;

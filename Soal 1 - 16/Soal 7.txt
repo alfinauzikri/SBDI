@@ -1,0 +1,6 @@
+SELECT CONCAT(SUBSTR(no_hp,1,3),'***') AS OPERATOR,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
+NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
+FROM mahasiswa
+WHERE SUBSTR(no_hp,1,3) = (SELECT SUBSTR(no_hp,1,3) FROM mahasiswa WHERE nim = 19090003)
+GROUP BY SUBSTR(no_hp,1,3);

@@ -1,0 +1,10 @@
+SELECT tinggi,
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 19 THEN 1 END),0) AS "2019",
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 20 THEN 1 END),0) AS "2020"
+FROM fisik
+INNER JOIN mahasiswa ON fisik.nim = mahasiswa.nim
+WHERE tinggi <= (SELECT tinggi FROM fisik WHERE nim = 19090003)
+GROUP BY tinggi
+ORDER BY tinggi;

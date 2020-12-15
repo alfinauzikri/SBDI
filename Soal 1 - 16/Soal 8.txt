@@ -1,0 +1,8 @@
+SELECT CONCAT(SUBSTR(no_hp,1,3),'***') AS OPERATOR,
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 19 THEN 1 END),0) AS "2019",
+NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 20 THEN 1 END),0) AS "2020"
+FROM mahasiswa
+WHERE SUBSTR(no_hp,1,3) = (SELECT SUBSTR(no_hp,1,3) FROM mahasiswa WHERE nim = 19090003)
+GROUP BY SUBSTR(no_hp,1,3);
