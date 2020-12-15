@@ -1,3 +1,13 @@
+SOAL
+----------------------------------------------------------------------------------------------------------------
+Berapa jumlah lelaki dan perempuan yang operator nomor teleponnya sama dengan operator nomor telepon teman anda?
+
+
+OPERATOR                 L          P
+--------------- ---------- ----------
+082***                  52         21
+
+
 SELECT CONCAT(SUBSTR(no_hp,1,3),'***') AS OPERATOR,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
