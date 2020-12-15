@@ -7,6 +7,8 @@ NAMA_LENGKAP                                                L          P
 -------------------------------------------------- ---------- ----------
 Dairoh, M.Sc.                                              37         20
 
+
+
 SELECT dosen.nama_lengkap,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
