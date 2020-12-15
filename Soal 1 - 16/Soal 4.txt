@@ -1,3 +1,13 @@
+SOAL
+----------------------------------------------------------------------------------
+Berapa mahasiswa tiap angkatan yang kota asalnya sama dengan kota asal teman anda?
+
+
+KOTA                            2017       2018       2019       2020
+------------------------- ---------- ---------- ---------- ----------
+Tegal                             26         50         55         49
+
+
 SELECT alamat.kota,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
