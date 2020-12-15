@@ -1,3 +1,13 @@
+SOAL
+------------------------------------------------------------------------------------
+Berapa mahasiswa tiap angkatan yang dosen walinya sama dengan dosen wali teman anda?
+
+
+NAMA_LENGKAP                                             2017       2018       2019       2020
+-------------------------------------------------- ---------- ---------- ---------- ----------
+Dairoh, M.Sc.                                                         15         26         16
+
+
 SELECT dosen.nama_lengkap,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
