@@ -1,3 +1,13 @@
+SOAL
+--------------------------------------------------------------------------------------------
+Berapa mahasiswa tiap angkatan yang ukuran pakaiannya sama dengan ukuran pakaian teman anda?
+
+
+UKURA       2017       2018       2019       2020
+----- ---------- ---------- ---------- ----------
+M             12         20         26         25
+
+
 SELECT ukuran_pakaian,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
