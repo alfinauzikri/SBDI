@@ -1,3 +1,13 @@
+SOAL
+--------------------------------------------------------------------------------------
+Berapa jumlah lelaki dan perempuan yang kota asalnya sama dengan kota asal teman anda?
+
+
+KOTA                               L          P
+------------------------- ---------- ----------
+Tegal                            124         56
+
+
 SELECT alamat.kota,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
