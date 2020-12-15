@@ -2,18 +2,6 @@ SELECT dosen.nama_lengkap AS "Nama Dosen Wali",
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P,
 COUNT(*) as Jumlah,
-NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 20 THEN 1 END),0) AS "2020",
-NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 19 THEN 1 END),0) AS "2019",
-NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 19 THEN 1 END),0) AS "2018",
-NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 19 THEN 1 END),0) AS "2017"
-FROM mahasiswa INNER JOIN dosen ON mahasiswa.dosen_wali = dosen.id_dosen
-GROUP BY dosen.nama_lengkap;
-
-
-SELECT dosen.nama_lengkap AS "Nama Dosen Wali",
-NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
-NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P,
-COUNT(*) as Jumlah,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = '20' THEN 1 END),0) AS "2020",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = '19' THEN 1 END),0) AS "2019",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = '18' THEN 1 END),0) AS "2018",
@@ -22,3 +10,5 @@ FROM mahasiswa
 INNER JOIN dosen ON dosen.id_dosen = mahasiswa.dosen_wali
 GROUP BY dosen.nama_lengkap, dosen.id_dosen
 ORDER BY dosen.id_dosen;
+
+Dipelajari dulu, jangan langsung copas!!
