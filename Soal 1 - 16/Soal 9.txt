@@ -1,3 +1,13 @@
+SOAL
+------------------------------------------------------------------------------------------------
+Berapa jumlah lelaki dan perempuan yang ukuran pakaiannya sama dengan ukuran pakaian teman anda?
+
+
+UKURA          L          P
+----- ---------- ----------
+M             24         59
+
+
 SELECT ukuran_pakaian,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
