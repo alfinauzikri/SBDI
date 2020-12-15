@@ -1,3 +1,13 @@
+SOAL
+--------------------------------------------------------------------------------------------
+Berapa mahasiswa tiap angkatan yang status sekolahnya sama dengan status sekolah teman anda?
+
+
+STATUS       2017       2018       2019       2020
+------ ---------- ---------- ---------- ----------
+Swasta         60         59         50         44
+
+
 SELECT status_sekolah.status,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
