@@ -1,3 +1,13 @@
+SOAL
+------------------------------------------------------------------------------------------------------------
+Berapa mahasiswa tiap angkatan yang operator nomor teleponnya sama dengan operator nomor telepon teman anda?
+
+
+OPERATOR              2017       2018       2019       2020
+--------------- ---------- ---------- ---------- ----------
+082***                  33          6         10         24
+
+
 SELECT CONCAT(SUBSTR(no_hp,1,3),'***') AS OPERATOR,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
