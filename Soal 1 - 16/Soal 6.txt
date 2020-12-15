@@ -1,3 +1,13 @@
+SOAL
+------------------------------------------------------------------------------------------------
+Berapa mahasiswa tiap angkatan yang penghasilan ayahnya sama dengan penghasilan ayah teman anda?
+
+
+PENGHASILAN                               2017       2018       2019       2020
+----------------------------------- ---------- ---------- ---------- ----------
+Tidak Bekerja                                9         12          9         10
+
+
 SELECT penghasilan.penghasilan,
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 17 THEN 1 END),0) AS "2017",
 NVL(SUM(CASE WHEN SUBSTR(mahasiswa.nim,1,2) = 18 THEN 1 END),0) AS "2018",
