@@ -1,3 +1,13 @@
+SOAL
+----------------------------------------------------------------------------------------------
+Berapa jumlah lelaki dan perempuan yang jenis sekolahnya sama dengan jenis sekolah teman anda?
+
+
+JENIS_S          L          P
+------- ---------- ----------
+SMK            199         75
+
+
 SELECT jenis_sekolah.jenis,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'L' THEN 1 END),0) AS L,
 NVL(SUM(CASE WHEN mahasiswa.gender = 'P' THEN 1 END),0) AS P
